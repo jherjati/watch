@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  file-watcher:
+    build: .
+    volumes:
+      - ./../ftp:/usr/src/ftp
+    environment:
+      - DIRECTUS_ENDPOINT
+      - DIRECTUS_TOKEN
+      - WATCHED_DIRECTORY
+      - FOLDER_ID
+    restart: unless-stopped
